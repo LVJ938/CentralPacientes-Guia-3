@@ -22,34 +22,37 @@ public class ConsolaVista {
         System.out.println("3. Eliminar Paciente");
         System.out.println("4. Mostrar los Pacientes");
         System.out.println("5. Salir");
-        System.out.print("Seleccione una opción: ");
+        System.out.print("\nSeleccione una opción: ");
         return input.nextInt(); // Retorna la opcion leida por teclado para que el controlador la procese.
     }
     
     // Metodos para pedir los datos del usuario cada dato se solicita en un método diferente para hacerlo mas flexible 
     
     public int pedirId(){
-        System.out.println("Ingrese el numero de identificacion del paciente");
-        input.nextLine();
-        return input.nextInt();
+        System.out.println("\nIngrese el numero de identificacion del paciente");
+        int id = input.nextInt();
+        input.nextLine(); // Limpiar el buffer después de nextInt()
+        return id;
     }
      public int pedirEdad(){
         System.out.println("Ingrese la edad del paciente");
+        int edad = input.nextInt();
         input.nextLine();
-        return input.nextInt();
+        return edad;
     }
      public String pedirNombre(){
         System.out.println("Ingrese el nombre del paciente");
-        input.nextLine();
-        return input.next();
+        return input.nextLine();
     }
     public String pedirClinica(){
         System.out.println("Ingrese la clinica del paciente");
-        input.nextLine();
-        return input.next();
+        return input.nextLine();
     }
     
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
+    }
+      public static String getEncabezado() {
+        return String.format("%-10s %-20s %-5s %-20s", "ID", "Nombre", "Edad", "Clínica");
     }
 }

@@ -51,6 +51,6 @@ public class Paciente {
     
   @Override
     public String toString() {
-        return "ID: " + id + ", Nombre: " + nombre + ", Edad: " + edad + ", Clínica: " + clinica;
+        return String.format("%-10d %-15s %-5d %-20s", id, nombre, edad, clinica);
     }   
 }

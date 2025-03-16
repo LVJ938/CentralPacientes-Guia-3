@@ -35,7 +35,7 @@ public class ListaPacientes {
             }
             actual = actual.siguiente; // Avanza al siguiente nodo
         }
-        System.out.println("Paciente no encontrado.");
+        //System.out.println("Paciente no encontrado.");
         return null; // Retorna null si no se encuentra el paciente
     }
     
@@ -49,8 +49,8 @@ public class ListaPacientes {
           return true;
       }
       NodoPaciente actual = cabeza;
-      while(actual.paciente !=null){
-          if(actual.paciente.getId() == id){
+      while(actual.siguiente !=null){
+          if(actual.siguiente.paciente.getId() == id){
               actual.siguiente = actual.siguiente.siguiente; // Se salta el nodo que se quiere  eliminar (Cabeza → [Nodo A] → [Nodo B] → [Nodo C] → [Nodo D] → null)   (Cabeza → [Nodo A] ------> [Nodo C] → [Nodo D] → null)  
               return true;
           }
@@ -62,10 +62,25 @@ public class ListaPacientes {
     // Mostrar todos los pacientes
     public void mostrarPacientes(){
         NodoPaciente actual = cabeza;
+        if (actual == null){
+            System.out.println("\nNo hay pasientes registrados");
+            return;
+        }
+        System.out.println("=============================================");
+        System.out.println("        LISTA DE PACIENTES          ");
+        System.out.println("=============================================");
+        System.out.printf("%-10s %-15s %-5s %-20s%n", "ID", "Nombre", "Edad", "Clinica");
+        System.out.println("--------------------------------------------");
         while (actual != null){
-            System.out.print(actual.paciente);
+            System.out.printf("%-10d %-15s %-5d %-20s%n", 
+                          actual.paciente.getId(), 
+                          actual.paciente.getNombre(), 
+                          actual.paciente.getEdad(), 
+                          actual.paciente.getClinica());
+            //System.out.print(actual.paciente);
             actual = actual.siguiente;
         }
+        System.out.println("=============================================");
     }
     
 }

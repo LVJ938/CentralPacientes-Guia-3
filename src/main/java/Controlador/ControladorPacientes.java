@@ -55,10 +55,15 @@ public class ControladorPacientes {
        int id = consola.pedirId();
        Paciente paciente = listaP.buscarPaciente(id);
        if (paciente !=null){
-           consola.mostrarMensaje("\nPaciente encontrado: "+paciente);
+           consola.mostrarMensaje("\nPaciente encontrado: ");
+           System.out.println("\n=========================================");
+System.out.println("            PACIENTE        ");
+System.out.println("=========================================");
+           System.out.printf("%-10s %-15s %-5s %-20s%n", "ID", "Nombre", "Edad", "Clinica");
+           consola.mostrarMensaje(""+paciente);
        }
        else{
-           consola.mostrarMensaje("El paciente no esta registrado");
+           consola.mostrarMensaje("\nEl paciente no esta registrado");
        }
    }
    
@@ -69,7 +74,7 @@ public class ControladorPacientes {
            consola.mostrarMensaje("El paciente fue eliminado correctamente");
        }
        else{
-           consola.mostrarMensaje("No hay pacientes con esa identificacion");
+           consola.mostrarMensaje("\nNo hay pacientes con esa identificacion");
        }
    }
 }
