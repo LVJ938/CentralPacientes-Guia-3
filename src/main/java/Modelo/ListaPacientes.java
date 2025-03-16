@@ -12,7 +12,7 @@ public class ListaPacientes {
     }
     
     //Agregar Paciente a la lista enlazada
-    public void addPaciente(Paciente paciente){
+    public void agregarPaciente(Paciente paciente){
         NodoPaciente nuevoP = new NodoPaciente(paciente);
         if (cabeza == null){
             cabeza = nuevoP; //Si la lista está vacía, el nuevo nodo es el primero
@@ -27,7 +27,7 @@ public class ListaPacientes {
     }
     
     // Buscar paciente por ID
-    public Paciente findPaciente(int id){
+    public Paciente buscarPaciente(int id){
         NodoPaciente actual = cabeza;
         while (actual != null){
             if (actual.paciente.getId() == id){ // Compara el ID con el ID del nodo actual
@@ -35,11 +35,12 @@ public class ListaPacientes {
             }
             actual = actual.siguiente; // Avanza al siguiente nodo
         }
+        System.out.println("Paciente no encontrado.");
         return null; // Retorna null si no se encuentra el paciente
     }
     
     // Eliminar paciente por ID
-    public boolean delPaciente(int id){
+    public boolean borrarPaciente(int id){
       if(cabeza == null){
           return false; // Si la lista está vacía, no hay nada que eliminar
       }

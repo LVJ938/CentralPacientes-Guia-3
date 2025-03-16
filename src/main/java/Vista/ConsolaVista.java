@@ -14,11 +14,13 @@ public class ConsolaVista {
     }
     
     public int mostrarMenu(){
-        System.out.println("\n--- Gestión de Pacientes ---");
+        System.out.println("\n---------------------------------");
+        System.out.println("    Gestion de Pacientes ");
+        System.out.println("---------------------------------");
         System.out.println("1. Agregar Paciente");
         System.out.println("2. Buscar Paciente");
         System.out.println("3. Eliminar Paciente");
-        System.out.println("4. Mostrar los Pacientes")
+        System.out.println("4. Mostrar los Pacientes");
         System.out.println("5. Salir");
         System.out.print("Seleccione una opción: ");
         return input.nextInt(); // Retorna la opcion leida por teclado para que el controlador la procese.
@@ -28,18 +30,22 @@ public class ConsolaVista {
     
     public int pedirId(){
         System.out.println("Ingrese el numero de identificacion del paciente");
+        input.nextLine();
         return input.nextInt();
     }
      public int pedirEdad(){
         System.out.println("Ingrese la edad del paciente");
+        input.nextLine();
         return input.nextInt();
     }
      public String pedirNombre(){
         System.out.println("Ingrese el nombre del paciente");
+        input.nextLine();
         return input.next();
     }
     public String pedirClinica(){
         System.out.println("Ingrese la clinica del paciente");
+        input.nextLine();
         return input.next();
     }
     
